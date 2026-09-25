@@ -1,13 +1,15 @@
 package com.anakataoka.blog.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "comentario")
-@Data
+@Getter
+@Setter
 public class Comentario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,7 +1,8 @@
 package com.anakataoka.blog.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,7 +12,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "publicacao")
-@Data
+@Getter
+@Setter
 public class Publicacao {
 
     @Id
@@ -34,11 +36,14 @@ public class Publicacao {
     @OneToMany(mappedBy = "publicacao", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comentario> comentarios = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "publicacao_categoria",
             joinColumns = @JoinColumn(name = "cod_publicacao"),
             inverseJoinColumns = @JoinColumn(name = "cod_categoria")
     )
     private Set<Categoria> categorias = new HashSet<>();
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Usuario usuario;
 }

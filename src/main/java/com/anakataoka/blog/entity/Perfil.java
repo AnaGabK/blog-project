@@ -1,14 +1,16 @@
 package com.anakataoka.blog.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "perfil")
-@Data
+@Getter
+@Setter
 public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
