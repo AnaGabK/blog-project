@@ -3,6 +3,7 @@ package com.anakataoka.blog.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -28,6 +29,9 @@ public class Usuario {
 
     @Column(nullable = false)
     private String senha;
+
+    @Column(name = "created_at", insertable = false, updatable = false,columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime dataCriacao;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
