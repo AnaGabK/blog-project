@@ -1,6 +1,7 @@
 package com.anakataoka.blog.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Set;
 
@@ -11,7 +12,7 @@ public record PublicacaoRequestDTO(
 
         @NotBlank String imagem,
 
-        @NotBlank Long usuarioId,
+        @NotNull Long usuarioId,
 
         Set<Long> categoriasId
 ) {}
