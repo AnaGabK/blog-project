@@ -1,7 +1,6 @@
 package com.anakataoka.blog.dto.response;
 
 import com.anakataoka.blog.entity.Comentario;
-import com.anakataoka.blog.entity.Perfil;
 
 import java.time.LocalDateTime;
 import java.util.List;

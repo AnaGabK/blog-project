@@ -1,12 +1,10 @@
 package com.anakataoka.blog.dto.request;
 
 import com.anakataoka.blog.entity.Comentario;
-import com.anakataoka.blog.entity.Perfil;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 import java.util.List;
-import java.util.Set;
 
 public record UsuarioRequestDTO(
         @NotBlank String nome,
@@ -15,7 +13,7 @@ public record UsuarioRequestDTO(
         @Email
         String email,
 
-        @NotBlank String imagem,
+        String imagem,
 
         String senha,
 
